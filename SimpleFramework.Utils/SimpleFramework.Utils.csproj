@@ -61,9 +61,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdoNetSqlServer\DataHelper.cs" />
     <Compile Include="AppConfig\AppConfigHelper.cs" />
+    <Compile Include="Brasil\CpfCnpj.cs" />
     <Compile Include="Crypto\CryptoHelper.cs" />
-    <Compile Include="DataTable\DataTableHelper.cs" />
+    <Compile Include="DataTableUtils\DataTableHelper.cs" />
     <Compile Include="Excel\ExcelHelper.cs" />
     <Compile Include="FileSystem\FileSystemHelper.cs" />
     <Compile Include="Ftp\FtpHelper.cs" />
@@ -76,7 +78,6 @@
   <ItemGroup>
     <Folder Include="ActiveDirectory\" />
     <Folder Include="AdoNetMySql\" />
-    <Folder Include="AdoNetSqlServer\" />
     <Folder Include="Asmx\" />
     <Folder Include="Authentication\" />
     <Folder Include="Cache\" />

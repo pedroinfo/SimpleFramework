@@ -4,7 +4,7 @@ using System.Linq;
 using System.Data;
 using System.Reflection;
 
-namespace SimpleFramework.Utils.DataTable
+namespace SimpleFramework.Utils.DataTableUtils
 {
     public static class DataTableHelper
     {
