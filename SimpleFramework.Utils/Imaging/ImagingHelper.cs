@@ -90,5 +90,7 @@ namespace SimpleFramework.Utils.Imaging
             b.SetResolution(Resolution, Resolution);
             return b;
         }
+
+        
     }
 }

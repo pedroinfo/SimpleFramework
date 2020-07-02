@@ -12,7 +12,7 @@ namespace SimpleFramework.Utils.AdoNetSqlServer
     /// This class is to help at this point, a set of methods to interact via ADO.NET with high level through Lists, 
     /// Procedures, Datatable, etc. In progress...
     /// </summary>
-    public class DataHelper
+    public class DataHelper  
     {
         public int ExecuteProcedure(string query, SqlParameter [] parameters = null)
         {
