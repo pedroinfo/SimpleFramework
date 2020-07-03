@@ -77,6 +77,7 @@
     <Compile Include="Ftp\FtpHelper.cs" />
     <Compile Include="Grid\GridHelper.cs" />
     <Compile Include="Imaging\ImagingHelper.cs" />
+    <Compile Include="Json\JsonHelper.cs" />
     <Compile Include="PDF\ITextSharpHelper.cs" />
     <Compile Include="PDF\PdfSharpHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,7 +93,6 @@
     <Folder Include="CSV\" />
     <Folder Include="HttpClient\" />
     <Folder Include="JSonConfig\" />
-    <Folder Include="Json\" />
     <Folder Include="Logging\" />
     <Folder Include="Machine\" />
     <Folder Include="Print\" />

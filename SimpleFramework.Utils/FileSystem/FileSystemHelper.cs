@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Linq;
 
 namespace SimpleFramework.Utils.FileSystem
 {
@@ -59,5 +60,12 @@ namespace SimpleFramework.Utils.FileSystem
             }
             return false;
         }
+
+        public static int CountFiles(string path, SearchOption searchOption) => 
+            new DirectoryInfo(path).GetFiles("*.*", searchOption).Length;
+           
+        public static int CountDirectories(string path, SearchOption searchOption) =>
+             Directory.EnumerateDirectories(path, "*.*", searchOption).Count();
+
     }
 }

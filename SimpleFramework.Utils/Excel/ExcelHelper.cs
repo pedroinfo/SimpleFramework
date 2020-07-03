@@ -1,6 +1,11 @@
 ﻿namespace SimpleFramework.Utils.Excel
 {
-    class ExcelHelper
+    public static class ExcelHelper
     {
+
+
+
+
+
     }
 }

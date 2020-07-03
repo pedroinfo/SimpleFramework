@@ -91,6 +91,5 @@ namespace SimpleFramework.Utils.Imaging
             return b;
         }
 
-        
     }
 }

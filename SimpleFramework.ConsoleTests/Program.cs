@@ -16,6 +16,9 @@ namespace SimpleFramework.ConsoleTests
             appConfigTest.Tests();
 
 
+            XmlTest xml = new XmlTest();
+            xml.Tests();
+
 
 
             Console.Read();
