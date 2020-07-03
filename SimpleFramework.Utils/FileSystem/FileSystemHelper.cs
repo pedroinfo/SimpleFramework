@@ -67,5 +67,6 @@ namespace SimpleFramework.Utils.FileSystem
         public static int CountDirectories(string path, SearchOption searchOption) =>
              Directory.EnumerateDirectories(path, "*.*", searchOption).Count();
 
+
     }
 }

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleFramework.Utils", "Si
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleFramework.ConsoleTests", "SimpleFramework.ConsoleTests\SimpleFramework.ConsoleTests.csproj", "{33048FE1-1CE8-47EC-8187-477D06A78B21}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleFramework.MvcTests", "SimpleFramework.MvcTests\SimpleFramework.MvcTests.csproj", "{3789D49D-1771-42DE-BDDC-CA6D50C7B441}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{33048FE1-1CE8-47EC-8187-477D06A78B21}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33048FE1-1CE8-47EC-8187-477D06A78B21}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33048FE1-1CE8-47EC-8187-477D06A78B21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3789D49D-1771-42DE-BDDC-CA6D50C7B441}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3789D49D-1771-42DE-BDDC-CA6D50C7B441}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3789D49D-1771-42DE-BDDC-CA6D50C7B441}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3789D49D-1771-42DE-BDDC-CA6D50C7B441}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

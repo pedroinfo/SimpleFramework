@@ -1,6 +1,8 @@
 ﻿namespace SimpleFramework.Utils.Email
 {
-    public class EmailHelper
+    public static class EmailHelper
     {
+       
+
     }
 }

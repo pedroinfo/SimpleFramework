@@ -7,7 +7,7 @@ namespace SimpleFramework.Utils.PDF
 {
     public static class ITextSharpHelper
     {
-        public static void MergeFilesPdf(string destinationFile, List<string> fileNames)
+        public static void MergeFilesPdf(List<string> fileNames, string destinationFile)
         {
             Document document = new Document();
 
