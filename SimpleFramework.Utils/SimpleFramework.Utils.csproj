@@ -35,6 +35,7 @@
       <HintPath>..\packages\iTextSharp.5.5.13.1\lib\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.ConfigurationManager, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Configuration.ConfigurationManager.4.7.0\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
@@ -68,11 +69,14 @@
     <Compile Include="ActiveDirectory\ActiveDirectoryHelper.cs" />
     <Compile Include="AdoNetSqlServer\DataHelper.cs" />
     <Compile Include="AppConfig\AppConfigHelper.cs" />
-    <Compile Include="Brasil\CpfCnpj.cs" />
+    <Compile Include="Brasil\Cep.cs" />
+    <Compile Include="Brasil\Cnpj.cs" />
+    <Compile Include="Brasil\Cpf.cs" />
     <Compile Include="Crypto\CryptoHelper.cs" />
     <Compile Include="DataTableUtils\DataTableHelper.cs" />
-    <Compile Include="DateTime\DateTimeExtensions.cs" />
+    <Compile Include="DateTimeUtils\DateTimeExtensions.cs" />
     <Compile Include="Email\EmailHelper.cs" />
+    <Compile Include="Email\EmailInfo.cs" />
     <Compile Include="Excel\ExcelHelper.cs" />
     <Compile Include="FileSystem\FileSystemHelper.cs" />
     <Compile Include="Ftp\FtpHelper.cs" />

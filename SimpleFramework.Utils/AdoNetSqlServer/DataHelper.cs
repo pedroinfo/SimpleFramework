@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data;
 using System.Data.SqlClient;
+using System.Threading.Tasks;
 
 namespace SimpleFramework.Utils.AdoNetSqlServer
 {
@@ -12,32 +14,24 @@ namespace SimpleFramework.Utils.AdoNetSqlServer
     /// This class is to help at this point, a set of methods to interact via ADO.NET with high level through Lists, 
     /// Procedures, Datatable, etc. In progress...
     /// </summary>
-    public class DataHelper  
+    public class DataHelper
     {
-        public int ExecuteProcedure(string query, SqlParameter [] parameters = null)
+        private static string _connectionString = "";
+
+        public static void InitializeConnectionString(string connectionString)
         {
-            using (var connection = new SqlConnection())
-            {
-                connection.Open();
-
-                using (var command = connection.CreateCommand())
-                {
-                    command.CommandText = query;
-                    command.CommandType = CommandType.StoredProcedure;
-
-                    if(parameters != null && parameters.Length > 0)
-                    {
-                        command.Parameters.AddRange(parameters);
-                    }
-
-                    return command.ExecuteNonQuery();
-                }
-            }
+            _connectionString = connectionString;
         }
 
-        public int ExecuteQuery(string query, SqlParameter [] parameters = null)
+        public DataHelper()
         {
-            using (var connection = new SqlConnection())
+            if (string.IsNullOrWhiteSpace(_connectionString))
+                throw new Exception("ConnectionString cannot null");
+        }
+
+        public int ExecuteProcedure(string query, SqlParameter[] parameters = null)
+        {
+            using (var connection = new SqlConnection(_connectionString))
             {
                 connection.Open();
 
@@ -56,70 +50,105 @@ namespace SimpleFramework.Utils.AdoNetSqlServer
             }
         }
 
-        public DataTable GetDataTable(string query, SqlParameter [] parameters )
+        public async Task<int> ExecuteProcedureAsync(string query, SqlParameter[] parameters = null)
         {
-            return null;
-        }
-
-        public List<T> GetList<T>(string query, SqlParameter [] parameters = null)
-        {
-            var list = new List<T>();
-
-            var isBuiltInType = true;
-
             using(var connection = new SqlConnection())
             {
-                connection.Open();
+                await connection.OpenAsync();
 
-                using(var command = connection.CreateCommand())
+                using (SqlCommand command = connection.CreateCommand())
                 {
                     command.CommandText = query;
-
+                    command.CommandType = CommandType.StoredProcedure;
 
                     if (parameters != null && parameters.Length > 0)
                     {
                         command.Parameters.AddRange(parameters);
                     }
 
-                    using(var reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            if (isBuiltInType)
-                            {
-                                list.Add(GetFieldValue<T>(reader, 0));
-                            }
-                            else
-                            {
-                                var item = Activator.CreateInstance<T>();
-
-                                Bind(item);
-
-                                list.Add(item);
-                            }
-                        }
-                    }
-
+                    return await command.ExecuteNonQueryAsync();
                 }
             }
+        }
 
+        public int Execute(string query, SqlParameter[] parameters = null)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
+
+                using (var command = connection.CreateCommand())
+                {
+                    command.CommandText = query;
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    if (parameters != null && parameters.Length > 0)
+                    {
+                        command.Parameters.AddRange(parameters);
+                    }
+
+                    return command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public async Task<int> ExecuteAsync(string query, SqlParameter[] parameters = null)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                await connection.OpenAsync();
+
+                using (var command = connection.CreateCommand())
+                {
+                    command.CommandText = query;
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    if (parameters != null && parameters.Length > 0)
+                    {
+                        command.Parameters.AddRange(parameters);
+                    }
+
+                    return await command.ExecuteNonQueryAsync();
+                }
+            }
+        }
+        
+        public DataTable GetDataTableFromProcedure(string query, SqlParameter[] parameters)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            using (var command = new SqlCommand(query, connection))
+            using (var adapter = new SqlDataAdapter(command))
+            {
+                var dataTable = new DataTable();
+                command.CommandType = CommandType.StoredProcedure;
+                adapter.Fill(dataTable);
+                return dataTable;
+            }
+        }
+
+        public DataTable GetDataTableFrom(string query, SqlParameter[] parameters)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            using (var command = new SqlCommand(query, connection))
+            using (var adapter = new SqlDataAdapter(command))
+            {
+                var dataTable = new DataTable();
+                command.CommandType = CommandType.Text;
+                adapter.Fill(dataTable);
+                return dataTable;
+            }
+        }
+
+        public List<T> GetList<T>(string query, SqlParameter[] parameters = null)
+        {
             return null;
         }
 
-        private void Bind<T>(T item)
-        {
-            throw new NotImplementedException();
-        }
-
-        private T GetFieldValue<T>(SqlDataReader reader, int v)
-        {
-            throw new NotImplementedException();
-        }
-
-        private static bool IsBulitinType(Type type)
-        {
-            return (type == typeof(object) || Type.GetTypeCode(type) != TypeCode.Object);
-        }
+        //public T GetSingle<T>(string query, SqlParameter[] parameters = null)
+        //{
+        //    T t;
+        //    return t;
+        //}
 
 
     }

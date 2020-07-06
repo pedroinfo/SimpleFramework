@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimpleFramework.Utils.DateTime
+namespace SimpleFramework.Utils.Brasil
 {
-    class DateTimeExtensions
+    class Cpf
     {
     }
 }
