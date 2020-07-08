@@ -63,10 +63,23 @@ namespace SimpleFramework.Utils.FileSystem
 
         public static int CountFiles(string path, SearchOption searchOption) => 
             new DirectoryInfo(path).GetFiles("*.*", searchOption).Length;
+
+        
+        //todo: implement this
+        public static int CountFiles(string path, string extensions, SearchOption searchOption)
+        {
+            return 0;
+        }
            
         public static int CountDirectories(string path, SearchOption searchOption) =>
              Directory.EnumerateDirectories(path, "*.*", searchOption).Count();
 
+        
+        //todo: implement this
+        public static string CalculateChecksum(string file)
+        {
+            return string.Empty;
+        }
 
     }
 }
