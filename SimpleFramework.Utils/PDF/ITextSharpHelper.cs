@@ -36,5 +36,26 @@ namespace SimpleFramework.Utils.PDF
         {
 
         }
+
+        public static void SplitPdfToImages()
+        {
+
+        }
+
+        //todo: Convert html to PDF 
+
+        //todo: Convert pdf to image
+
+        //todo: Search content on PDF 
+
+        //todo: Set Metadata
+
+        //todo: Get Metadata 
+
+        //todo: set password
+
+        //todo: get password
+
+        //todo: convert to PDFA
     }
 }
