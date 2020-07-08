@@ -91,5 +91,29 @@ namespace SimpleFramework.Utils.Imaging
             return b;
         }
 
+        //todo: Convert to Bitonal 
+
+        //todo: Convert to Grayscale
+
+        //todo: Convert to Group 4 
+
+        //todo: Split tiff
+
+        //todo: merge tiff 
+
+        //todo: Set Quality (Compression)
+
+        //todo: watermark 
+
+        //todo: Merge image 
+
+        //todo: Convert to Byte
+
+        //todo: Convert to Base64
+
+        //todo: Check is equal
+
+        //todo: Rotate
+
     }
 }
