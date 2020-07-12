@@ -1,5 +1,7 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 
 namespace SimpleFramework.Utils.FileSystem
 {
@@ -64,22 +66,25 @@ namespace SimpleFramework.Utils.FileSystem
         public static int CountFiles(string path, SearchOption searchOption) => 
             new DirectoryInfo(path).GetFiles("*.*", searchOption).Length;
 
-        
-        //todo: implement this
-        public static int CountFiles(string path, string extensions, SearchOption searchOption)
+        public static int CountFiles(string path, string [] extensions, SearchOption searchOption)
         {
-            return 0;
+            return 
+                Directory.GetFiles(path, "*.*").Where(file => extensions.Any(x => file.EndsWith(x, StringComparison.OrdinalIgnoreCase))).Count();
         }
            
         public static int CountDirectories(string path, SearchOption searchOption) =>
              Directory.EnumerateDirectories(path, "*.*", searchOption).Count();
 
-        
-        //todo: implement this
-        public static string CalculateChecksum(string file)
+        public static string GetChecksum(string filename)
         {
-            return string.Empty;
+            using (var md5 = MD5.Create())
+            {
+                using (var stream = File.OpenRead(filename))
+                {
+                    var hash = md5.ComputeHash(stream);
+                    return BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
+                }
+            }
         }
-
     }
 }

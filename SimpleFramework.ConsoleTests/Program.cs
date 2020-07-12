@@ -11,14 +11,16 @@ namespace SimpleFramework.ConsoleTests
         static void Main(string[] args)
         {
 
-            var appConfigTest = new AppConfigTest();
+            //var appConfigTest = new AppConfigTest();
 
-            appConfigTest.Tests();
+            //appConfigTest.Tests();
 
 
-            XmlTest xml = new XmlTest();
-            xml.Tests();
+            //XmlTest xml = new XmlTest();
+            //xml.Tests();
 
+
+            Console.WriteLine(Guid.NewGuid().ToString("N"));
 
 
             Console.Read();

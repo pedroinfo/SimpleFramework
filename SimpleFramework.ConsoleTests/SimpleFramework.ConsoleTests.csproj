@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="AppConfigTest.cs" />
     <Compile Include="DataHelperTest.cs" />
+    <Compile Include="FileSystemTests.cs" />
     <Compile Include="MailTest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

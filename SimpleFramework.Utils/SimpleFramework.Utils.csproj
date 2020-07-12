@@ -73,6 +73,8 @@
     <Compile Include="Brasil\Cnpj.cs" />
     <Compile Include="Brasil\Cpf.cs" />
     <Compile Include="Crypto\CryptoHelper.cs" />
+    <Compile Include="Crypto\HashHelper.cs" />
+    <Compile Include="CSV\CsvHelper.cs" />
     <Compile Include="DataTableUtils\DataTableHelper.cs" />
     <Compile Include="DateTimeUtils\DateTimeExtensions.cs" />
     <Compile Include="Email\EmailHelper.cs" />
@@ -86,6 +88,7 @@
     <Compile Include="PDF\ITextSharpHelper.cs" />
     <Compile Include="PDF\PdfSharpHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Random\RandomHelper.cs" />
     <Compile Include="Strings\StringHelper.cs" />
     <Compile Include="WebConfig\WebConfigHelper.cs" />
     <Compile Include="Xml\XmlHelper.cs" />
@@ -95,7 +98,6 @@
     <Folder Include="Asmx\" />
     <Folder Include="Authentication\" />
     <Folder Include="Cache\" />
-    <Folder Include="CSV\" />
     <Folder Include="HttpClient\" />
     <Folder Include="JSonConfig\" />
     <Folder Include="Logging\" />
