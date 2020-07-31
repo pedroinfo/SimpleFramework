@@ -91,6 +91,8 @@ namespace SimpleFramework.Utils.Imaging
             return b;
         }
 
+        //http://www.wischik.com/lu/programmer/1bpp.html
+
         //todo: Convert to Bitonal 
 
         //todo: Convert to Grayscale
