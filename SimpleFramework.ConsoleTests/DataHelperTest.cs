@@ -1,6 +1,6 @@
 ﻿namespace SimpleFramework.ConsoleTests
 {
-    class DataHelperTest
+    public class DataHelperTest
     {
     }
 }

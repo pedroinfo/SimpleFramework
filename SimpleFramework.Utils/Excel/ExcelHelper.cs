@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using OfficeOpenXml;
+using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
@@ -38,11 +39,8 @@ namespace SimpleFramework.Utils.Excel
         public static DataTable GetExcelToDataTable(string fileName)
         {
             return null;
-        } 
+        }
 
-    //    public static 
-
-
-
+       
     }
 }

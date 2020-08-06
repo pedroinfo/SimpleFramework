@@ -2,9 +2,25 @@
 {
     public class CryptoHelper
     {
-        //todo: AES 
+        public static string EncryptStringAes(string a, string b)
+        {
+            return "";
+        }
 
+        public static string DecryptStringAes(string a, string b)
+        {
+            return "";
+        }
 
+        public static byte[] EncryptBytesAes(string a, string b)
+        {
+            return null;
+        }
+
+        public static byte[] DecryptBytesAes(string a, string b)
+        {
+            return null;
+        }
 
         //todo: DES 
 
